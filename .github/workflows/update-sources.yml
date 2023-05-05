@@ -1,0 +1,43 @@
+---
+name: update-sources
+on:
+  workflow_dispatch:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Get old config checksum
+        id: old_config
+        run: |
+          echo checksum=$(sha256sum releases/zed/config.yml | awk '{ print $1 }') >> $GITHUB_OUTPUT
+
+      - name: Generate config
+        run: |
+          python update_sources.py -i releases/zed/config.yml -o releases/zed/config.yml
+
+      - name: Get new config checksum
+        id: new_config
+        run: |
+          echo checksum=$(sha256sum releases/zed/config.yml | awk '{ print $1 }') >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: ${{ steps.new_config.outputs.checksum != steps.old_config.outputs.checksum }}
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "feat: update sources for zed"
+          delete-branch: true
+          branch: feat/bump-sources-zed
+          title: "⚙️ zed: update sources"
+          body: |
+            This is an automatic pull request
