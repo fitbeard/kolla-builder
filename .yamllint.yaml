@@ -1,12 +1,16 @@
+---
 extends: default
 
 rules:
-  document-start:
+  line-length:
     ignore: |
       .github/*.yaml
-      .markdownlint.yaml
-      .pre-commit-config.yaml
-        document-start:
+      .github/*.yml
+      .github/workflows/*.yaml
+      .github/workflows/*.yml
   truthy:
     ignore: |
       .github/*.yaml
+      .github/*.yml
+      .github/workflows/*.yaml
+      .github/workflows/*.yml
