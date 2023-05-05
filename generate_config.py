@@ -14,7 +14,7 @@ args = parser.parse_args()
 if args.input and args.output:
     input = args.input
     output = args.output
-    
+
 # If not, print an error message and exit
 else:
     print('Error: input and output file paths must be provided as command-line arguments')

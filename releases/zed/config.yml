@@ -8,13 +8,13 @@ sources:
         - nova2-name
     neutron:
       kolla:
-      - neutron-base
+        - neutron-base
       branch: stable/2023.1
     awx-without-k8s:
       branch: master
       owner: fitbeard
       kolla:
-      - tadas
+        - tadas
 kolla-build:
   DEFAULT:
     base: rocky
