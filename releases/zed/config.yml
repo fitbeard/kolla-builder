@@ -1,44 +1,20 @@
-sources:
-  owner: openstack
-  branch: stable/zed
-  repository:
-    nova:
-      kolla:
-        - nova-base
-        - nova2-name
-    neutron:
-      kolla:
-        - neutron-base
-      branch: stable/2023.1
-    awx-without-k8s:
-      branch: master
-      owner: fitbeard
-      kolla:
-        - tadas
+---
 kolla-build:
   DEFAULT:
     base: rocky
-    base_tag: 9
     base_image: quay.io/rockylinux/rockylinux
-    namespace: tadas/kolla
+    base_tag: 9
     cache: false
-    registry: quay.io
-    pull: true
     maintainer: Tadas Sutkaitis <tadasas@gmail.com>
-  nova-base:
-    type: git
-    location: https://github.com/openstack/nova.git
-    reference: f1009524f2778c482f9e67cc6195f1101b5f6xxx
+    namespace: tadas/kolla
+    pull: true
+    registry: quay.io
   horizon-plugin-blazar-dashboard:
     enabled: false
   horizon-plugin-cloudkitty-dashboard:
     enabled: false
   horizon-plugin-designate-dashboard:
     enabled: false
-  nova-base2:
-    type: git
-    location: https://github.com/openstack/nova.git
-    reference: f1009524f2778c482f9e67cc6195f1101b5f6bdc
   horizon-plugin-freezer-web-ui:
     enabled: false
   horizon-plugin-heat-dashboard:
@@ -75,16 +51,53 @@ kolla-build:
     enabled: false
   horizon-plugin-zun-ui:
     enabled: false
+  neutron-base:
+    location: https://github.com/openstack/neutron.git
+    reference: 5ec4afb5a286e982462429843c8f979cea16b6d9
+    type: git
+  nova-base:
+    location: https://github.com/openstack/nova.git
+    reference: f1009524f2778c482f9e67cc6195f1101b5f6bdc
+    type: git
+  nova-base2:
+    location: https://github.com/openstack/nova.git
+    reference: f1009524f2778c482f9e67cc6195f1101b5f6bdc
+    type: git
+  nova2-name:
+    location: https://github.com/openstack/nova.git
+    reference: f1009524f2778c482f9e67cc6195f1101b5f6bdc
+    type: git
   profiles:
     heat: heat
     horizon: horizon
+    mariadb: mariadb
+    mcrouter: mcrouter
+    neutron: neutron
+    nova: nova-
     tadas: >-
       barbican,cron,cinder,kolla-toolbox,fluentd,glance,
       haproxy,heat,horizon,keepalived,keystone,mariadb,
       memcached,mistral,neutron,nova-,placement,openvswitch,
       rabbitmq,rsyslog
-    mariadb: mariadb
-    mcrouter: mcrouter
-    neutron: neutron
-    nova: nova-
     toolbox: kolla-toolbox
+  tadas:
+    location: https://github.com/fitbeard/awx-without-k8s.git
+    reference: c4baaadcdb0960edc7eef2223ce122876624a6de
+    type: git
+sources:
+  branch: stable/zed
+  owner: openstack
+  repository:
+    awx-without-k8s:
+      branch: master
+      kolla:
+        - tadas
+      owner: fitbeard
+    neutron:
+      branch: stable/2023.1
+      kolla:
+        - neutron-base
+    nova:
+      kolla:
+        - nova-base
+        - nova2-name
