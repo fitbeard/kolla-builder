@@ -1,14 +1,28 @@
 ---
 name: update-sources
 on:
+  schedule:
+    - cron: 0 0 * * *
   workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch, tag or SHA to checkout
+        required: true
+        default: main
 
 jobs:
-  pre-commit:
+  update-sources:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        release:
+          - zed
+          - antelope
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref || 'main' }}
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -20,24 +34,26 @@ jobs:
       - name: Get old config checksum
         id: old_config
         run: |
-          echo checksum=$(sha256sum releases/zed/config.yml | awk '{ print $1 }') >> $GITHUB_OUTPUT
+          echo checksum=$(sha256sum releases/${{ matrix.release }}/config.yml | awk '{ print $1 }') >> $GITHUB_OUTPUT
 
       - name: Generate config
         run: |
-          python update_sources.py -i releases/zed/config.yml -o releases/zed/config.yml
+          python update_sources.py -i releases/${{ matrix.release }}/config.yml -o releases/${{ matrix.release }}/config.yml
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Get new config checksum
         id: new_config
         run: |
-          echo checksum=$(sha256sum releases/zed/config.yml | awk '{ print $1 }') >> $GITHUB_OUTPUT
+          echo checksum=$(sha256sum releases/${{ matrix.release }}/config.yml | awk '{ print $1 }') >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         if: ${{ steps.new_config.outputs.checksum != steps.old_config.outputs.checksum }}
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: "feat: update sources for zed"
+          commit-message: "feat: update sources for ${{ matrix.release }}"
           delete-branch: true
-          branch: feat/bump-sources-zed
-          title: "⚙️ zed: update sources"
+          branch: feat/bump-sources-${{ matrix.release }}
+          title: "⚙️ ${{ matrix.release }}: update sources"
           body: |
             This is an automatic pull request

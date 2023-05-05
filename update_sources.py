@@ -5,7 +5,7 @@ from ruamel.yaml.comments import CommentedMap
 from github import Github
 
 # read the access token from the environment variable or as a command-line argument
-access_token = os.environ.get("GITHUB_ACCESS_TOKEN")
+access_token = os.environ.get("ACCESS_TOKEN")
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--token", help="Github access token")
 parser.add_argument("-i", "--input", help="Input YAML file")
