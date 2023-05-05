@@ -1,0 +1,12 @@
+extends: default
+
+rules:
+  document-start:
+    ignore: |
+      .github/*.yaml
+      .markdownlint.yaml
+      .pre-commit-config.yaml
+        document-start:
+  truthy:
+    ignore: |
+      .github/*.yaml
