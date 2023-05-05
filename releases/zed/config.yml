@@ -1,0 +1,90 @@
+sources:
+  owner: openstack
+  branch: stable/zed
+  repository:
+    nova:
+      kolla:
+        - nova-base
+        - nova2-name
+    neutron:
+      kolla:
+      - neutron-base
+      branch: stable/2023.1
+    awx-without-k8s:
+      branch: master
+      owner: fitbeard
+      kolla:
+      - tadas
+kolla-build:
+  DEFAULT:
+    base: rocky
+    base_tag: 9
+    base_image: quay.io/rockylinux/rockylinux
+    namespace: tadas/kolla
+    cache: false
+    registry: quay.io
+    pull: true
+    maintainer: Tadas Sutkaitis <tadasas@gmail.com>
+  nova-base:
+    type: git
+    location: https://github.com/openstack/nova.git
+    reference: f1009524f2778c482f9e67cc6195f1101b5f6xxx
+  horizon-plugin-blazar-dashboard:
+    enabled: false
+  horizon-plugin-cloudkitty-dashboard:
+    enabled: false
+  horizon-plugin-designate-dashboard:
+    enabled: false
+  nova-base2:
+    type: git
+    location: https://github.com/openstack/nova.git
+    reference: f1009524f2778c482f9e67cc6195f1101b5f6bdc
+  horizon-plugin-freezer-web-ui:
+    enabled: false
+  horizon-plugin-heat-dashboard:
+    enabled: false
+  horizon-plugin-ironic-ui:
+    enabled: false
+  horizon-plugin-magnum-ui:
+    enabled: false
+  horizon-plugin-manila-ui:
+    enabled: false
+  horizon-plugin-masakari-dashboard:
+    enabled: false
+  horizon-plugin-mistral-dashboard:
+    enabled: false
+  horizon-plugin-murano-dashboard:
+    enabled: false
+  horizon-plugin-neutron-vpnaas-dashboard:
+    enabled: false
+  horizon-plugin-octavia-dashboard:
+    enabled: false
+  horizon-plugin-sahara-dashboard:
+    enabled: false
+  horizon-plugin-senlin-dashboard:
+    enabled: false
+  horizon-plugin-solum-dashboard:
+    enabled: false
+  horizon-plugin-tacker-dashboard:
+    enabled: false
+  horizon-plugin-trove-dashboard:
+    enabled: false
+  horizon-plugin-vitrage-dashboard:
+    enabled: false
+  horizon-plugin-watcher-dashboard:
+    enabled: false
+  horizon-plugin-zun-ui:
+    enabled: false
+  profiles:
+    heat: heat
+    horizon: horizon
+    tadas: >-
+      barbican,cron,cinder,kolla-toolbox,fluentd,glance,
+      haproxy,heat,horizon,keepalived,keystone,mariadb,
+      memcached,mistral,neutron,nova-,placement,openvswitch,
+      rabbitmq,rsyslog
+    mariadb: mariadb
+    mcrouter: mcrouter
+    neutron: neutron
+    nova: nova-
+    toolbox: kolla-toolbox
