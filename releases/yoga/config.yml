@@ -29,6 +29,8 @@ kolla-build:
     enabled: false
   horizon-plugin-mistral-dashboard:
     enabled: false
+  horizon-plugin-monasca-ui:
+    enabled: false
   horizon-plugin-murano-dashboard:
     enabled: false
   horizon-plugin-neutron-vpnaas-dashboard:
@@ -85,7 +87,7 @@ kolla-build:
     reference: c4baaadcdb0960edc7eef2223ce122876624a6de
     type: git
 sources:
-  branch: stable/zed
+  branch: stable/yoga
   owner: openstack
   repository:
     awx-without-k8s:
