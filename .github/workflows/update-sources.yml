@@ -36,9 +36,9 @@ jobs:
         run: |
           echo checksum=$(sha256sum releases/${{ matrix.release }}/config.yml | awk '{ print $1 }') >> $GITHUB_OUTPUT
 
-      - name: Generate config
+      - name: Update sources
         run: |
-          python update_sources.py -i releases/${{ matrix.release }}/config.yml -o releases/${{ matrix.release }}/config.yml
+          python kolla-builder.py update-sources -i releases/${{ matrix.release }}/config.yml -o releases/${{ matrix.release }}/config.yml
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
