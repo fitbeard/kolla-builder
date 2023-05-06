@@ -69,14 +69,6 @@ kolla-build:
     location: https://github.com/openstack/nova.git
     reference: db8c7a6d8cb20508b2d9c9abc250c7608477cd50
     type: git
-  nova-base2:
-    location: https://github.com/openstack/nova.git
-    reference: f1009524f2778c482f9e67cc6195f1101b5f6bdc
-    type: git
-  nova2-name:
-    location: https://github.com/openstack/nova.git
-    reference: f1009524f2778c482f9e67cc6195f1101b5f6bdc
-    type: git
   profiles:
     heat: heat
     horizon: horizon
@@ -90,10 +82,6 @@ kolla-build:
       memcached,mistral,neutron,nova-,placement,openvswitch,
       rabbitmq,rsyslog
     toolbox: kolla-toolbox
-  tadas:
-    location: https://github.com/fitbeard/awx-without-k8s.git
-    reference: c4baaadcdb0960edc7eef2223ce122876624a6de
-    type: git
 sources:
   branch: stable/yoga
   owner: openstack
