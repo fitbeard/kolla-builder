@@ -77,11 +77,11 @@ kolla-build:
     mcrouter: mcrouter
     neutron: neutron
     nova: nova-
-    tadas: >-
-      barbican,cron,cinder,kolla-toolbox,fluentd,glance,
-      haproxy,heat,horizon,keepalived,keystone,mariadb,
-      memcached,mistral,neutron,nova-,placement,openvswitch,
-      rabbitmq,rsyslog
+    cinder: cinder
+    main: >-
+      cron,cinder,kolla-toolbox,fluentd,glance,haproxy,heat,
+      horizon,keepalived,keystone,mariadb,memcached,neutron,
+      nova-,placement,openvswitch,rabbitmq,rsyslog,ovn,skydive
     toolbox: kolla-toolbox
 sources:
   branch: stable/yoga
