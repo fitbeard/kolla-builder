@@ -5,6 +5,7 @@ kolla-build:
     base_image: quay.io/centos/centos
     base_tag: stream8
     cache: false
+    profile: main
     maintainer: Tadas Sutkaitis <tadasas@gmail.com>
     namespace: tadas/kolla
     pull: true
@@ -61,6 +62,16 @@ kolla-build:
   horizon-plugin-watcher-dashboard:
     enabled: false
   horizon-plugin-zun-ui:
+    enabled: false
+  neutron-base-plugin-networking-baremetal:
+    enabled: false
+  neutron-base-plugin-networking-generic-switch:
+    enabled: false
+  neutron-base-plugin-networking-sfc:
+    enabled: false
+  neutron-base-plugin-vpnaas-agent:
+    enabled: false
+  nova-base-plugin-blazar:
     enabled: false
   neutron-base:
     location: https://github.com/openstack/neutron.git
