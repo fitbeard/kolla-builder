@@ -1,9 +1,9 @@
 ---
 kolla-build:
   DEFAULT:
-    base: rocky
-    base_image: quay.io/rockylinux/rockylinux
-    base_tag: 9
+    base: centos
+    base_image: quay.io/centos/centos
+    base_tag: stream8
     cache: false
     maintainer: Tadas Sutkaitis <tadasas@gmail.com>
     namespace: tadas/kolla
