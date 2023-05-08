@@ -4,7 +4,7 @@ kolla-build:
     base: centos
     base_image: quay.io/centos/centos
     base_tag: stream8
-    cache: false
+    cache: true
     profile: main
     maintainer: Tadas Sutkaitis <tadasas@gmail.com>
     namespace: tadas/kolla
