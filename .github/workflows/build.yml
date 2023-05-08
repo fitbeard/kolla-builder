@@ -50,6 +50,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pip install -r requirements.txt
           pip install -r ${{ matrix.release }}/requirements.txt
 
       - name: Generate kolla config
