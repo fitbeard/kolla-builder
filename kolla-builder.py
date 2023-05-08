@@ -24,7 +24,7 @@ update_sources_parser.add_argument("-ok", "--output-key", help="Key to use in th
 generate_config_parser = subparsers.add_parser('generate-config', help='Generate kolla-build.conf')
 generate_config_parser.add_argument("-i", "--input", help="Input YAML file")
 generate_config_parser.add_argument("-ik", "--input-key", help="Key to search in the input YAML file", default="kolla-build")
-generate_config_parser.add_argument("-o", "--output", help="Output YAML file")
+generate_config_parser.add_argument("-o", "--output", help="Output INI file")
 
 args = parser.parse_args()
 
