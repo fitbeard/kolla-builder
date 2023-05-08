@@ -23,7 +23,7 @@ jobs:
             echo "$release: $release/**" >> .filters.yml
           done
 
-      - name: Get changed roles
+      - name: Get changed releases
         uses: dorny/paths-filter@v2
         id: changes
         with:
@@ -37,7 +37,7 @@ jobs:
 
     strategy:
       matrix:
-        role: ${{ fromJson(needs.check-changes.outputs.releases) }}
+        release: ${{ fromJson(needs.check-changes.outputs.releases) }}
 
     if: ${{ needs.check-changes.outputs.releases != '[]' }}
 
@@ -50,11 +50,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r ${{ matrix.releases }}/requirements.txt
+          pip install -r ${{ matrix.release }}/requirements.txt
 
       - name: Generate kolla config
         run: |
-          python kolla-builder.py generate-config -i ${{ matrix.releases }}/config.yml -o ${{ matrix.releases }}/kolla-build.conf
+          python kolla-builder.py generate-config -i ${{ matrix.release }}/config.yml -o ${{ matrix.release }}/kolla-build.conf
 
       - name: Build kolla images
         run: |
