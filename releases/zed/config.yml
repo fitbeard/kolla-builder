@@ -4,7 +4,7 @@ kolla-build:
     base: rocky
     base_image: quay.io/rockylinux/rockylinux
     base_tag: 9
-    cache: false
+    cache: true
     profile: main
     maintainer: Tadas Sutkaitis <tadasas@gmail.com>
     namespace: tadas/kolla

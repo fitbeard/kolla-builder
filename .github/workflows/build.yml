@@ -58,5 +58,3 @@ jobs:
         run: |
           kolla-build --version
           kolla-build --config-file ${{ matrix.release }}/kolla-build.conf --profile main --nopush
-        env:
-          DOCKER_BUILDKIT: 1
