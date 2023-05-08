@@ -9,6 +9,7 @@ kolla-build:
     namespace: tadas/kolla
     pull: true
     registry: quay.io
+    tag: zed-dev
   example-with-owner-and-branch:
     location: https://github.com/fitbeard/awx-without-k8s.git
     reference: c4baaadcdb0960edc7eef2223ce122876624a6de
