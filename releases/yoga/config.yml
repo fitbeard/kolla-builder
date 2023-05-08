@@ -112,3 +112,21 @@ sources:
     nova:
       kolla:
         - nova-base
+    cinder:
+      kolla:
+        - cinder-base
+    glance:
+      kolla:
+        - glance-base
+    heat:
+      kolla:
+        - heat-base
+    keystone:
+      kolla:
+        - keystone-base
+    placement:
+      kolla:
+        - placement-base
+    requirements:
+      kolla:
+        - openstack-base
