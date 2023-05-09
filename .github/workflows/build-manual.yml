@@ -1,0 +1,72 @@
+---
+name: build-manual
+on:
+  workflow_dispatch:
+    inputs:
+      os:
+        description: 'Openstack release'
+        required: true
+        default: 'zed'
+        type: choice
+        options:
+          - yoga
+          - zed
+      profile:
+        description: 'Kolla profile'
+        required: true
+        default: 'main'
+        type: choice
+        options:
+          - heat
+          - horizon
+          - main
+          - mariadb
+          - neutron
+          - nova
+          - toolbox
+      confirm:
+        description: 'Are you sure? Set this to yes.'
+        required: true
+        default: 'no'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v3
+
+      - name: Verify inputs
+        id: verify
+        run: |
+          set -e
+          if [[ ${{ github.event.inputs.confirm }} != "yes" ]]; then
+            >&2 echo "Confirm must be 'yes'"
+            exit 1
+          fi
+          exit 0
+
+      - name: Authenticate with Quay.io
+        uses: docker/login-action@v2.1.0
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_ROBOT_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r releases/${{ github.event.inputs.os }}/requirements.txt
+
+      - name: Generate kolla config
+        run: |
+          python kolla-builder.py generate-config -i releases/${{ github.event.inputs.os }}/config.yml -o releases/${{ github.event.inputs.os }}/kolla-build.conf
+
+      - name: Build and push kolla images
+        run: |
+          kolla-build --version
+          kolla-build --config-file releases/${{ github.event.inputs.os }}/kolla-build.conf --profile ${{ github.event.inputs.profile }} --push
