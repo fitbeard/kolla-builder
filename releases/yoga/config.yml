@@ -5,15 +5,27 @@ kolla-build:
     base_image: quay.io/centos/centos
     base_tag: stream8
     cache: true
-    profile: main
     maintainer: Tadas Sutkaitis <tadasas@gmail.com>
     namespace: tadas/kolla
+    profile: main
     pull: true
     registry: quay.io
     tag: yoga-dev
+  cinder-base:
+    location: https://github.com/openstack/cinder.git
+    reference: d4535c77493a7b362091b962f42f2613dea65dbe
+    type: git
   example-with-owner-and-branch:
     location: https://github.com/fitbeard/awx-without-k8s.git
     reference: c4baaadcdb0960edc7eef2223ce122876624a6de
+    type: git
+  glance-base:
+    location: https://github.com/openstack/glance.git
+    reference: 641399fdd00966f0e6cedcaafffa787ac44dc7bd
+    type: git
+  heat-base:
+    location: https://github.com/openstack/heat.git
+    reference: 41a6b91362c3cf90bd3692c88b9840d6b1a8d56b
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
@@ -63,6 +75,14 @@ kolla-build:
     enabled: false
   horizon-plugin-zun-ui:
     enabled: false
+  keystone-base:
+    location: https://github.com/openstack/keystone.git
+    reference: 7c96280555d1de5ef5e7e3b12362439669427e4e
+    type: git
+  neutron-base:
+    location: https://github.com/openstack/neutron.git
+    reference: 3b65c1a47e0cd54a147a709d6c331702c1fbe9cb
+    type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
   neutron-base-plugin-networking-generic-switch:
@@ -71,28 +91,32 @@ kolla-build:
     enabled: false
   neutron-base-plugin-vpnaas-agent:
     enabled: false
-  nova-base-plugin-blazar:
-    enabled: false
-  neutron-base:
-    location: https://github.com/openstack/neutron.git
-    reference: 3b65c1a47e0cd54a147a709d6c331702c1fbe9cb
-    type: git
   nova-base:
     location: https://github.com/openstack/nova.git
     reference: db8c7a6d8cb20508b2d9c9abc250c7608477cd50
     type: git
+  nova-base-plugin-blazar:
+    enabled: false
+  openstack-base:
+    location: https://github.com/openstack/requirements.git
+    reference: 70106ea80ce77cc6425ca09790503ba03be14618
+    type: git
+  placement-base:
+    location: https://github.com/openstack/placement.git
+    reference: 4d3df47ee3e394e3178d58c15306620809ad2806
+    type: git
   profiles:
+    cinder: cinder
     heat: heat
     horizon: horizon
-    mariadb: mariadb
-    mcrouter: mcrouter
-    neutron: neutron
-    nova: nova-
-    cinder: cinder
     main: >-
       cron,cinder,kolla-toolbox,fluentd,glance,haproxy,heat,
       horizon,keepalived,keystone,mariadb,memcached,neutron,
       nova-,placement,openvswitch,rabbitmq,rsyslog,ovn,skydive
+    mariadb: mariadb
+    mcrouter: mcrouter
+    neutron: neutron
+    nova: nova-
     toolbox: kolla-toolbox
 sources:
   branch: stable/yoga
@@ -103,15 +127,6 @@ sources:
       kolla:
         - example-with-owner-and-branch
       owner: fitbeard
-    horizon:
-      kolla:
-        - horizon
-    neutron:
-      kolla:
-        - neutron-base
-    nova:
-      kolla:
-        - nova-base
     cinder:
       kolla:
         - cinder-base
@@ -121,9 +136,18 @@ sources:
     heat:
       kolla:
         - heat-base
+    horizon:
+      kolla:
+        - horizon
     keystone:
       kolla:
         - keystone-base
+    neutron:
+      kolla:
+        - neutron-base
+    nova:
+      kolla:
+        - nova-base
     placement:
       kolla:
         - placement-base
