@@ -6,8 +6,7 @@ kolla-build:
     base_tag: 9
     cache: true
     maintainer: Tadas Sutkaitis <tadasas@gmail.com>
-    namespace: tadas/kolla
-    profile: main
+    namespace: fitbeard/kolla
     pull: true
     registry: quay.io
     tag: zed-dev
