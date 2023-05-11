@@ -6,8 +6,7 @@ kolla-build:
     base_tag: stream8
     cache: true
     maintainer: Tadas Sutkaitis <tadasas@gmail.com>
-    namespace: tadas/kolla
-    profile: main
+    namespace: fitbeard/kolla
     pull: true
     registry: quay.io
     tag: yoga-dev
