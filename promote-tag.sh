@@ -1,10 +1,11 @@
 #!/bin/bash
-# Usage: ./promote-tag.sh [-p <PROFILE>] [-c <CONFIG_FILE>] [-r <PREFIX>] [-t <TAG>] [-h]
+# Usage: ./promote-tag.sh [-p <PROFILE>] [-c <CONFIG_FILE>] [-r <PREFIX>] [-ti <INPUT_TAG>] [-to <OUTPUT_TAG>] [-h]
 
 PROFILE_DEFAULT="main"
 CONFIG_FILE_DEFAULT="kolla-build.conf"
 PREFIX_DEFAULT=""
-TAG_DEFAULT="dev"
+INPUT_TAG_DEFAULT="dev"
+OUTPUT_TAG_DEFAULT=""
 
 while [[ $# -gt 0 ]]
 do
@@ -26,13 +27,18 @@ case $key in
     shift
     shift
     ;;
-    -t)
-    TAG="$2"
+    -ti)
+    INPUT_TAG="$2"
+    shift
+    shift
+    ;;
+    -to)
+    OUTPUT_TAG="$2"
     shift
     shift
     ;;
     -h)
-    echo "Usage: ./promote-tag.sh [-p <PROFILE>] [-c <CONFIG_FILE>] [-r <PREFIX>] [-t <TAG>] [-h]"
+    echo "Usage: ./promote-tag.sh [-p <PROFILE>] [-c <CONFIG_FILE>] [-r <PREFIX>] [-ti <INPUT_TAG>] [-to <OUTPUT_TAG>] [-h]"
     exit 0
     ;;
     *)
@@ -45,6 +51,12 @@ done
 PROFILE="${PROFILE:-$PROFILE_DEFAULT}"
 CONFIG_FILE="${CONFIG_FILE:-$CONFIG_FILE_DEFAULT}"
 PREFIX="${PREFIX:-$PREFIX_DEFAULT}"
-TAG="${TAG:-$TAG_DEFAULT}"
+INPUT_TAG="${INPUT_TAG:-$INPUT_TAG_DEFAULT}"
+OUTPUT_TAG="${OUTPUT_TAG:-$OUTPUT_TAG_DEFAULT}"
 
-kolla-build --list-images --profile "${PROFILE}" --config-file "${CONFIG_FILE}" | awk -v registry="${PREFIX}" -v tag=":${TAG}-$(date -u +"%Y.%m%d.%H%M%S")" -F': ' '{print registry $2 tag}' | sed 's/^[ \t]*//'
+kolla-build --list-images --profile "${PROFILE}" --config-file "${CONFIG_FILE}" | awk -v registry="${PREFIX}" -v tag=":${INPUT_TAG}" -F': ' '{print registry $2 tag}' | sed 's/^[ \t]*//' > image-list.txt
+
+for image in $(cat image-list.txt)
+do
+  crane tag $image ${OUTPUT_TAG}
+done
