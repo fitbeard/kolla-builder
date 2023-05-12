@@ -73,5 +73,4 @@ jobs:
       - name: Promote tag
         run: |
           kolla-build --version
-          kolla-build --config-file releases/${{ github.event.inputs.os }}/kolla-build.conf --profile ${{ github.event.inputs.profile }} --push
           PROFILE=${{ github.event.inputs.profile }} bash promote-tag.sh -c releases/${{ github.event.inputs.os }}/kolla-build.conf -r ${{ env[github.event.inputs.os] }}
