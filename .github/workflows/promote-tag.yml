@@ -31,7 +31,7 @@ on:
 
 env:
   yoga: "quay.io/fitbeard/kolla/centos-source-"
-  zed: "quay.io/fitbeard/kolla"
+  zed: "quay.io/fitbeard/kolla/"
 
 jobs:
   promote-tag:
@@ -58,6 +58,11 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_ROBOT_TOKEN }}
 
+      - name: Setup Crane
+        uses: imjasonh/setup-crane@v0.3
+        with:
+          version: v0.15.1
+
       - name: Setup Python
         uses: actions/setup-python@v4
 
@@ -70,7 +75,7 @@ jobs:
         run: |
           python kolla-builder.py generate-config -i releases/${{ github.event.inputs.os }}/config.yml -o releases/${{ github.event.inputs.os }}/kolla-build.conf
 
-      - name: Promote tag
+      - name: Promote new tag
         run: |
           kolla-build --version
-          PROFILE=${{ github.event.inputs.profile }} bash promote-tag.sh -c releases/${{ github.event.inputs.os }}/kolla-build.conf -r ${{ env[github.event.inputs.os] }}
+          PROFILE=${{ github.event.inputs.profile }} bash promote-tag.sh -c releases/${{ github.event.inputs.os }}/kolla-build.conf -r ${{ env[github.event.inputs.os] }} -ti ${{ github.event.inputs.os }}-dev -to ${{ github.event.inputs.os }}-$(date -u +"%Y.%m%d.%H%M%S")
