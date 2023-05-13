@@ -12,7 +12,7 @@ kolla-build:
     tag: zed-dev
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: d854529c2272761f51a3fe3c69541c4b8c1bc0bb
+    reference: 51dbd1e8061012bee4baca8aa60bf16a459279f9
     type: git
   example-with-owner-and-branch:
     location: https://github.com/fitbeard/awx-without-k8s.git
@@ -28,7 +28,7 @@ kolla-build:
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: 54b8762bc2c11599ecb0a65c7d7fe85d44ee89e6
+    reference: 24c655379274b159e9ed543b8eeb976667a1cb7a
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
@@ -78,7 +78,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: baee022ec586a0bf4ba2c14011c6f33a7a137afd
+    reference: 1864dd868459384e8f19ba413929a8c196877370
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
@@ -90,13 +90,13 @@ kolla-build:
     enabled: false
   nova-base:
     location: https://github.com/openstack/nova.git
-    reference: f1009524f2778c482f9e67cc6195f1101b5f6bdc
+    reference: ca3616f6794790d0b701c3cee088bc35d5dcea8b
     type: git
   nova-base-plugin-blazar:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: 498825acb59fac66a391a59ebd95c83b5a60d4a4
+    reference: 1b63d9206ec4ae0ec2df0fc3014f728cc90d0662
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
