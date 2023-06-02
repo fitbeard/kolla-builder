@@ -98,7 +98,7 @@ kolla-build:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: fd2b0d9010bff9159f9fc9f5c929472137b52c2e
+    reference: b30d68b4306f8e4d411794279505f2593f9e3be3
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
