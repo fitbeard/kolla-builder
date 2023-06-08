@@ -13,19 +13,19 @@ kolla-build:
     tag: antelope-dev
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 51dbd1e8061012bee4baca8aa60bf16a459279f9
+    reference: f542dd07b07162f39325a83fae67cda166e36798
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
-    reference: 06a18202ab52c64803f044b8f848ed1c160905d2
+    reference: 285021bdb0ea344f995508fabb8b4e2485f2cf3c
     type: git
   heat-base:
     location: https://github.com/openstack/heat.git
-    reference: 49b59a8f09cb011a50fa3c11501da07b13f8f3da
+    reference: 6a4c7b57b8383bef4a02fb485e781c4cbb2a03d8
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: cfc9bf4a726ebf4087dc770c7893d20c6c433d68
+    reference: cbbc7d362167dd8804990d2dd24b55c8dec8df4b
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
@@ -71,11 +71,11 @@ kolla-build:
     enabled: false
   keystone-base:
     location: https://github.com/openstack/keystone.git
-    reference: 7c30c9e000b58055b61d8cf58e52493f2b5aba8a
+    reference: 040e6d09b1e7e6817c81209c2b089d318715bef6
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: 64b879d0c32b575034e5db3ac0f6ccc20eb6efe8
+    reference: 9684f471ba33d09d770b566c8aa02b6719951535
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
@@ -87,23 +87,22 @@ kolla-build:
     enabled: false
   nova-base:
     location: https://github.com/openstack/nova.git
-    reference: 77db64237b23050d94df113a38412c5333d23357
+    reference: b9089acc627602893efc2dc3e456395d4147f518
     type: git
   nova-base-plugin-blazar:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: 6ca88c2b3bf46cde84d5286d956922e28e9d1178
+    reference: 92e17ec0794879e010ed4ba754b5ee1246bfe917
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
-    reference: d7ced6bd2fc82caf458f20b5652888164b1bbb70
+    reference: b3652feea1855c9481c9441976379d9851c0c62f
     type: git
   profiles:
     cinder: cinder
     heat: heat
     horizon: horizon
-    skyline: skyline
     main: >-
       cron,cinder,kolla-toolbox,fluentd,glance,haproxy,heat,
       horizon,keepalived,keystone,mariadb,memcached,neutron,
@@ -112,7 +111,16 @@ kolla-build:
     mcrouter: mcrouter
     neutron: neutron
     nova: nova-
+    skyline: skyline
     toolbox: kolla-toolbox
+  skyline-apiserver:
+    location: https://github.com/openstack/skyline-apiserver.git
+    reference: 4dc464ba4c23d4219fac8e45c852f785f4ebc9ec
+    type: git
+  skyline-console:
+    location: https://github.com/openstack/skyline-console.git
+    reference: d4cae6dd6a96d74b754c590fd2dd48fab83a345f
+    type: git
 sources:
   branch: stable/2023.1
   owner: openstack
