@@ -18,6 +18,7 @@ jobs:
         release:
           - yoga
           - zed
+          - antelope
     steps:
       - name: Checkout project
         uses: actions/checkout@v3

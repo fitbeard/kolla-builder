@@ -11,6 +11,7 @@ on:
         options:
           - yoga
           - zed
+          - antelope
       profile:
         description: 'Kolla profile'
         required: true
@@ -19,6 +20,7 @@ on:
         options:
           - heat
           - horizon
+          - skyline
           - main
           - mariadb
           - neutron

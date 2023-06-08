@@ -1,0 +1,152 @@
+---
+kolla-build:
+  DEFAULT:
+    base: rocky
+    base_image: quay.io/rockylinux/rockylinux
+    base_tag: 9
+    cache: true
+    engine: docker
+    maintainer: Tadas Sutkaitis <tadasas@gmail.com>
+    namespace: fitbeard/kolla
+    pull: true
+    registry: quay.io
+    tag: antelope-dev
+  cinder-base:
+    location: https://github.com/openstack/cinder.git
+    reference: 51dbd1e8061012bee4baca8aa60bf16a459279f9
+    type: git
+  glance-base:
+    location: https://github.com/openstack/glance.git
+    reference: 06a18202ab52c64803f044b8f848ed1c160905d2
+    type: git
+  heat-base:
+    location: https://github.com/openstack/heat.git
+    reference: 49b59a8f09cb011a50fa3c11501da07b13f8f3da
+    type: git
+  horizon:
+    location: https://github.com/openstack/horizon.git
+    reference: cfc9bf4a726ebf4087dc770c7893d20c6c433d68
+    type: git
+  horizon-plugin-blazar-dashboard:
+    enabled: false
+  horizon-plugin-cloudkitty-dashboard:
+    enabled: false
+  horizon-plugin-designate-dashboard:
+    enabled: false
+  horizon-plugin-freezer-web-ui:
+    enabled: false
+  horizon-plugin-heat-dashboard:
+    enabled: false
+  horizon-plugin-ironic-ui:
+    enabled: false
+  horizon-plugin-magnum-ui:
+    enabled: false
+  horizon-plugin-manila-ui:
+    enabled: false
+  horizon-plugin-masakari-dashboard:
+    enabled: false
+  horizon-plugin-mistral-dashboard:
+    enabled: false
+  horizon-plugin-murano-dashboard:
+    enabled: false
+  horizon-plugin-neutron-vpnaas-dashboard:
+    enabled: false
+  horizon-plugin-octavia-dashboard:
+    enabled: false
+  horizon-plugin-sahara-dashboard:
+    enabled: false
+  horizon-plugin-senlin-dashboard:
+    enabled: false
+  horizon-plugin-solum-dashboard:
+    enabled: false
+  horizon-plugin-tacker-dashboard:
+    enabled: false
+  horizon-plugin-trove-dashboard:
+    enabled: false
+  horizon-plugin-vitrage-dashboard:
+    enabled: false
+  horizon-plugin-watcher-dashboard:
+    enabled: false
+  horizon-plugin-zun-ui:
+    enabled: false
+  keystone-base:
+    location: https://github.com/openstack/keystone.git
+    reference: 7c30c9e000b58055b61d8cf58e52493f2b5aba8a
+    type: git
+  neutron-base:
+    location: https://github.com/openstack/neutron.git
+    reference: 64b879d0c32b575034e5db3ac0f6ccc20eb6efe8
+    type: git
+  neutron-base-plugin-networking-baremetal:
+    enabled: false
+  neutron-base-plugin-networking-generic-switch:
+    enabled: false
+  neutron-base-plugin-networking-sfc:
+    enabled: false
+  neutron-base-plugin-vpnaas-agent:
+    enabled: false
+  nova-base:
+    location: https://github.com/openstack/nova.git
+    reference: 77db64237b23050d94df113a38412c5333d23357
+    type: git
+  nova-base-plugin-blazar:
+    enabled: false
+  openstack-base:
+    location: https://github.com/openstack/requirements.git
+    reference: 6ca88c2b3bf46cde84d5286d956922e28e9d1178
+    type: git
+  placement-base:
+    location: https://github.com/openstack/placement.git
+    reference: d7ced6bd2fc82caf458f20b5652888164b1bbb70
+    type: git
+  profiles:
+    cinder: cinder
+    heat: heat
+    horizon: horizon
+    skyline: skyline
+    main: >-
+      cron,cinder,kolla-toolbox,fluentd,glance,haproxy,heat,
+      horizon,keepalived,keystone,mariadb,memcached,neutron,
+      nova-,placement,openvswitch,ovn,rabbitmq,rsyslog,skyline
+    mariadb: mariadb
+    mcrouter: mcrouter
+    neutron: neutron
+    nova: nova-
+    toolbox: kolla-toolbox
+sources:
+  branch: stable/2023.1
+  owner: openstack
+  repository:
+    cinder:
+      kolla:
+        - cinder-base
+    glance:
+      kolla:
+        - glance-base
+    heat:
+      kolla:
+        - heat-base
+    horizon:
+      kolla:
+        - horizon
+    keystone:
+      kolla:
+        - keystone-base
+    neutron:
+      kolla:
+        - neutron-base
+    nova:
+      kolla:
+        - nova-base
+    placement:
+      kolla:
+        - placement-base
+    requirements:
+      kolla:
+        - openstack-base
+    skyline-apiserver:
+      kolla:
+        - skyline-apiserver
+    skyline-console:
+      kolla:
+        - skyline-console
