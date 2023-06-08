@@ -11,6 +11,7 @@ on:
         options:
           - yoga
           - zed
+          - antelope
       profile:
         description: 'Kolla profile'
         required: true
@@ -19,6 +20,7 @@ on:
         options:
           - heat
           - horizon
+          - skyline
           - main
           - mariadb
           - neutron
@@ -32,6 +34,7 @@ on:
 env:
   yoga: "quay.io/fitbeard/kolla/centos-source-"
   zed: "quay.io/fitbeard/kolla/"
+  antelope: "quay.io/fitbeard/kolla/"
 
 jobs:
   promote-tag:
