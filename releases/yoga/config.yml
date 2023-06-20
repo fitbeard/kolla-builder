@@ -16,7 +16,7 @@ kolla-build:
     type: git
   example-with-owner-and-branch:
     location: https://github.com/fitbeard/awx-without-k8s.git
-    reference: bb9abaa5a63b3c1e9b0f9154ef8d3b5b342939b3
+    reference: 1698320c45a7eea0092661e9b711d388ff2853d0
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
@@ -80,7 +80,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: b6145ee13ee0ed08b13181ec2a64b0d362559a8b
+    reference: d3dc53d9e782bfb2f235bae376d501fbe857127e
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
@@ -98,7 +98,7 @@ kolla-build:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: b30d68b4306f8e4d411794279505f2593f9e3be3
+    reference: 58a8ea285c47c6b0e8abff59175dd17772142f08
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
