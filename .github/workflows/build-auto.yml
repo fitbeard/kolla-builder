@@ -64,4 +64,4 @@ jobs:
       - name: Build and push kolla images
         run: |
           kolla-build --version
-          kolla-build --config-file ${{ matrix.release }}/kolla-build.conf --profile main --push
+          kolla-build --config-file ${{ matrix.release }}/kolla-build.conf --template-override ${{ matrix.release }}/template-overrides.j2 --profile main --push
