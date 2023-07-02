@@ -12,11 +12,11 @@ kolla-build:
     tag: yoga-dev
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 92e8a3df46e77878d79575b67dc145004c4fb06a
+    reference: f99ad21b5ba86ef2872955b47a43ccfaeed6af6c
     type: git
   example-with-owner-and-branch:
     location: https://github.com/fitbeard/awx-without-k8s.git
-    reference: 1698320c45a7eea0092661e9b711d388ff2853d0
+    reference: 33d29d741cc0cbde8ab04c1ca40571160e602448
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
@@ -80,7 +80,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: 410ce2f1e4ceb638c7401a81c30d163307cd8965
+    reference: 73ba302faf6f5007068c05b836a2e5654be908a7
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
