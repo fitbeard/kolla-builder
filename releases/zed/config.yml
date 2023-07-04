@@ -12,7 +12,7 @@ kolla-build:
     tag: zed-dev
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 5114e779f09af4de4593ebcb99a4770eafa86f92
+    reference: 0d562ba31f135ce1b042201e2d62c6e3039c50de
     type: git
   example-with-owner-and-branch:
     location: https://github.com/fitbeard/awx-without-k8s.git
