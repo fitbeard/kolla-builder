@@ -71,7 +71,7 @@ kolla-build:
     enabled: false
   keystone-base:
     location: https://github.com/openstack/keystone.git
-    reference: 040e6d09b1e7e6817c81209c2b089d318715bef6
+    reference: a72ec5d6020c73751740f5ac75619a68cbab60f8
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
@@ -87,7 +87,7 @@ kolla-build:
     enabled: false
   nova-base:
     location: https://github.com/openstack/nova.git
-    reference: b9089acc627602893efc2dc3e456395d4147f518
+    reference: 976364f9e8f2ddb0e2cb5d8dc765c37ef833c837
     type: git
   nova-base-plugin-blazar:
     enabled: false
