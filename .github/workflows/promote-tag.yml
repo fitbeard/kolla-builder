@@ -32,7 +32,7 @@ on:
         default: 'no'
 
 env:
-  yoga: "quay.io/fitbeard/kolla/centos-source-"
+  yoga: "quay.io/fitbeard/kolla/rocky-source-"
   zed: "quay.io/fitbeard/kolla/"
   antelope: "quay.io/fitbeard/kolla/"
 

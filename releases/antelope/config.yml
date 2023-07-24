@@ -13,7 +13,7 @@ kolla-build:
     tag: antelope-dev
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: f542dd07b07162f39325a83fae67cda166e36798
+    reference: 81af154d85a760e3f157ed5b4acd2624939d09b2
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
@@ -75,7 +75,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: 657fa25dae56c70d11a8eb524b168244db774cb0
+    reference: 6bba3bdb544a03adde799b872408a87935a5cf1f
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
