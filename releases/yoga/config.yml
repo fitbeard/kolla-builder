@@ -1,9 +1,9 @@
 ---
 kolla-build:
   DEFAULT:
-    base: centos
-    base_image: quay.io/centos/centos
-    base_tag: stream8
+    base: rocky
+    base_image: quay.io/rockylinux/rockylinux
+    base_tag: 9
     cache: true
     maintainer: Tadas Sutkaitis <tadasas@gmail.com>
     namespace: fitbeard/kolla
@@ -12,7 +12,7 @@ kolla-build:
     tag: yoga-dev
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: a482ddc35d5794166dbf2c54e6751631864b7c05
+    reference: 3f254a5e6648e2c8c6ea7d29b9b8053fcec9fa47
     type: git
   example-with-owner-and-branch:
     location: https://github.com/fitbeard/awx-without-k8s.git
@@ -80,7 +80,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: 1a5c2996d00d15c76ed443c0abbf58efa72951f8
+    reference: 47187e1b39f1ca177c160bce5191e38981cf9cdf
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
@@ -92,7 +92,7 @@ kolla-build:
     enabled: false
   nova-base:
     location: https://github.com/openstack/nova.git
-    reference: 2fbc99b31a7de2c8c1d8e7b46ef95f628a413ba5
+    reference: 0b0da898ff5ca77a111fb545a62dc3f86987bfb3
     type: git
   nova-base-plugin-blazar:
     enabled: false
