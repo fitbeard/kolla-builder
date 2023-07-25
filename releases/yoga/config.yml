@@ -12,7 +12,7 @@ kolla-build:
     tag: yoga-dev
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 3f254a5e6648e2c8c6ea7d29b9b8053fcec9fa47
+    reference: fa5c62ccea4cb9907e1d37868c5066511d8c1273
     type: git
   example-with-owner-and-branch:
     location: https://github.com/fitbeard/awx-without-k8s.git
