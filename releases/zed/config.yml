@@ -12,11 +12,11 @@ kolla-build:
     tag: zed-dev
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: bfddef33993b1828ec248e47d324f681717efa30
+    reference: a51d09fe6578ba8bc26be24f9ec8c1b16208a9b1
     type: git
   example-with-owner-and-branch:
     location: https://github.com/fitbeard/awx-without-k8s.git
-    reference: ce07962f588b5a9bd780fd89d06c41280ec59b21
+    reference: f3a68525276e666537c4ccd835d29e46ffcf3abe
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
@@ -78,7 +78,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: 9857288b33d1eefac15c29cdac73e7ddd75bccc6
+    reference: 2badef930a17f4adbf8ebbd7c4d8f2229bd67d59
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
