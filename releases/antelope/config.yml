@@ -29,7 +29,7 @@ kolla-build:
     type: git
   horizon-additions-custom-theme:
     location: https://github.com/fitbeard/openstack-horizon-custom-theme.git
-    reference: f22e2a0c4ced4581f703c7bc101f11b4d4822448
+    reference: a921fe58dd36858ff9d50e362596c94149958f28
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
