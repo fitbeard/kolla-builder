@@ -1,1 +1,7 @@
 {% extends parent_template %}
+
+# Labels
+{% block labels %}
+LABEL maintainer="{{ maintainer }}" name="{{ image_name }}" build-date="{{ build_date }}"
+LABEL org.opencontainers.image.source="https://github.com/fitbeard/kolla-builder"
+{% endblock %}

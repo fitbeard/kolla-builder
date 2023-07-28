@@ -158,3 +158,8 @@ sources:
     skyline-console:
       kolla:
         - skyline-console
+    openstack-horizon-custom-theme:
+      branch: feat/initial_assets
+      kolla:
+        - horizon-additions-custom-theme
+      owner: fitbeard
