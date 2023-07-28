@@ -28,7 +28,7 @@ kolla-build:
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: 60efb5706da091a45b00c9fd879e8a93e1c34b25
+    reference: 98ccf28110f5ee8a7b401bcc232e51277c502947
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
