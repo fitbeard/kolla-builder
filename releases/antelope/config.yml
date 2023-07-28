@@ -27,6 +27,10 @@ kolla-build:
     location: https://github.com/openstack/horizon.git
     reference: 3ea69c8906062c503157d47d5cd0fdda68b733a8
     type: git
+  horizon-additions-custom-theme:
+    location: https://github.com/fitbeard/openstack-horizon-custom-theme.git
+    reference: f22e2a0c4ced4581f703c7bc101f11b4d4822448
+    type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
   horizon-plugin-cloudkitty-dashboard:
@@ -146,6 +150,11 @@ sources:
     nova:
       kolla:
         - nova-base
+    openstack-horizon-custom-theme:
+      branch: feat/initial_assets
+      kolla:
+        - horizon-additions-custom-theme
+      owner: fitbeard
     placement:
       kolla:
         - placement-base
@@ -158,8 +167,3 @@ sources:
     skyline-console:
       kolla:
         - skyline-console
-    openstack-horizon-custom-theme:
-      branch: feat/initial_assets
-      kolla:
-        - horizon-additions-custom-theme
-      owner: fitbeard
