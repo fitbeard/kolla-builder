@@ -29,7 +29,7 @@ kolla-build:
     type: git
   horizon-additions-custom-theme:
     location: https://github.com/fitbeard/openstack-horizon-custom-theme.git
-    reference: a921fe58dd36858ff9d50e362596c94149958f28
+    reference: 47b8734099083f65784aba6dfcfa1efcf4c0e3a5
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
@@ -97,7 +97,7 @@ kolla-build:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: d450d25d953cc53e902f83c6a0123efa2536faeb
+    reference: 2710414b4663b85b48ecbbba21f4f0ea42dc3df1
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
