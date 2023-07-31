@@ -75,6 +75,7 @@ jobs:
 
       - name: Upload templates
         uses: actions/upload-artifact@v3
+        if: always()
         with:
           name: templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }}
           path: templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }}/
