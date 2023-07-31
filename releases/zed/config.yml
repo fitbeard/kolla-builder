@@ -109,7 +109,7 @@ kolla-build:
     main: >-
       cron,cinder,kolla-toolbox,fluentd,glance,haproxy,heat,
       horizon,keepalived,keystone,mariadb,memcached,neutron,
-      nova-,placement,openvswitch,rabbitmq,rsyslog,ovn,skydive
+      nova-,placement,openvswitch,rabbitmq,rsyslog,ovn
     mariadb: mariadb
     mcrouter: mcrouter
     neutron: neutron

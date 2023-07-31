@@ -98,7 +98,7 @@ kolla-build:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: fb131ba4a3bd11ff87094d96805c925c08b3dfdc
+    reference: 4ecaf51b166abbcf5eff2183c69a2847abfaa07a
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
@@ -111,7 +111,7 @@ kolla-build:
     main: >-
       cron,cinder,kolla-toolbox,fluentd,glance,haproxy,heat,
       horizon,keepalived,keystone,mariadb,memcached,neutron,
-      nova-,placement,openvswitch,rabbitmq,rsyslog,ovn,skydive
+      nova-,placement,openvswitch,rabbitmq,rsyslog,ovn
     mariadb: mariadb
     mcrouter: mcrouter
     neutron: neutron
