@@ -75,6 +75,6 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: templates-${{ matrix.release }}-main
-          path: templates-${{ matrix.release }}-main/
+          name: templates-${{ steps.release_name.outputs.name }}-main
+          path: templates-${{ steps.release_name.outputs.name }}-main/
           retention-days: 30
