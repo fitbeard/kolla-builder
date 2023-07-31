@@ -6,7 +6,7 @@ on:
       os:
         description: 'Openstack release'
         required: true
-        default: 'zed'
+        default: 'antelope'
         type: choice
         options:
           - yoga
@@ -71,4 +71,11 @@ jobs:
       - name: Build and push kolla images
         run: |
           kolla-build --version
-          kolla-build --config-file releases/${{ github.event.inputs.os }}/kolla-build.conf --template-override releases/${{ github.event.inputs.os }}/template-overrides.j2 --profile ${{ github.event.inputs.profile }} --push
+          kolla-build --config-file releases/${{ github.event.inputs.os }}/kolla-build.conf --work-dir templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }} --template-override releases/${{ github.event.inputs.os }}/template-overrides.j2 --profile ${{ github.event.inputs.profile }} --push
+
+      - name: Upload templates
+        uses: actions/upload-artifact@v3
+        with:
+          name: templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }}
+          path: templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }}/
+          retention-days: 30

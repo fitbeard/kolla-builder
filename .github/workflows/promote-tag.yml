@@ -6,7 +6,7 @@ on:
       os:
         description: 'Openstack release'
         required: true
-        default: 'zed'
+        default: 'antelope'
         type: choice
         options:
           - yoga
