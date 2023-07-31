@@ -69,7 +69,8 @@ jobs:
       - name: Build and push kolla images
         run: |
           kolla-build --version
-          kolla-build --config-file ${{ matrix.release }}/kolla-build.conf --work-dir templates-${{ steps.release_name.outputs.name }}-main --template-override ${{ matrix.release }}/template-overrides.j2 --profile main --push
+          kolla-build --config-file ${{ matrix.release }}/kolla-build.conf --template-override ${{ matrix.release }}/template-overrides.j2 --profile main --nopush --template-only --work-dir templates-${{ steps.release_name.outputs.name }}-main
+          kolla-build --config-file ${{ matrix.release }}/kolla-build.conf --template-override ${{ matrix.release }}/template-overrides.j2 --profile main --push
 
       - name: Upload templates
         uses: actions/upload-artifact@v3
