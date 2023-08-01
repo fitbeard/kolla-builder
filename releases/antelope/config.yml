@@ -91,7 +91,7 @@ kolla-build:
     enabled: false
   nova-base:
     location: https://github.com/openstack/nova.git
-    reference: 976364f9e8f2ddb0e2cb5d8dc765c37ef833c837
+    reference: 252e6602f792f24141a9dd59211470601f3b0267
     type: git
   nova-base-plugin-blazar:
     enabled: false
