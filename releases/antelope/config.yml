@@ -119,7 +119,7 @@ kolla-build:
     toolbox: kolla-toolbox
   skyline-apiserver:
     location: https://github.com/openstack/skyline-apiserver.git
-    reference: 4dc464ba4c23d4219fac8e45c852f785f4ebc9ec
+    reference: 326a503d6cece6701922a5a3ed1a980efa12e2f5
     type: git
   skyline-console:
     location: https://github.com/openstack/skyline-console.git
