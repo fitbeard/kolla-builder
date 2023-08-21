@@ -13,7 +13,7 @@ kolla-build:
     tag: antelope-dev
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 102665a949757521c05ecc6703748134274dda81
+    reference: bdf0a3d52681fcfd6aa85bb01491f3a3f5557127
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
