@@ -13,7 +13,7 @@ jobs:
       releases: ${{ steps.changes.outputs.changes }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Create release filters
         run: |
@@ -40,7 +40,7 @@ jobs:
         release: ${{ fromJson(needs.changes.outputs.releases) }}
     steps:
       - name: Checkout project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Authenticate with Quay.io
         uses: docker/login-action@v2.2.0
