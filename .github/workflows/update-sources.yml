@@ -21,7 +21,7 @@ jobs:
           - antelope
     steps:
       - name: Checkout project
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ inputs.ref || 'main' }}
 
