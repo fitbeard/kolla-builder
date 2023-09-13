@@ -20,7 +20,6 @@ on:
         options:
           - heat
           - horizon
-          - skyline
           - main
           - mariadb
           - neutron

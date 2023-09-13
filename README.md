@@ -1,4 +1,12 @@
-# kolla-builder
+# Tools for automatic Openstack Kolla image building
+
+Script `kolla-builder.py` automatically fetches corresponding commits of desired Openstack projects
+and generates `kolla-build.conf` for later use with in `kolla` toolset.
+
+The idea here is to control building process and pin versions if needed.
+
+To understand whole process please take a look how github workflows are configured for this repository
+and examples in open/closed pull requests.
 
 ## Contributing
 
