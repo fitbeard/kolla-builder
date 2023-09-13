@@ -110,12 +110,11 @@ kolla-build:
     main: >-
       cron,cinder,kolla-toolbox,fluentd,glance,haproxy,heat,
       horizon,keepalived,keystone,mariadb,memcached,neutron,
-      nova-,placement,openvswitch,ovn,rabbitmq,rsyslog,skyline
+      nova-,placement,openvswitch,ovn,rabbitmq,rsyslog
     mariadb: mariadb
     mcrouter: mcrouter
     neutron: neutron
     nova: nova-
-    skyline: skyline
     toolbox: kolla-toolbox
   skyline-apiserver:
     location: https://github.com/openstack/skyline-apiserver.git
@@ -151,7 +150,7 @@ sources:
       kolla:
         - nova-base
     openstack-horizon-custom-theme:
-      branch: feat/initial_assets
+      branch: main
       kolla:
         - horizon-additions-custom-theme
       owner: fitbeard
@@ -161,9 +160,3 @@ sources:
     requirements:
       kolla:
         - openstack-base
-    skyline-apiserver:
-      kolla:
-        - skyline-apiserver
-    skyline-console:
-      kolla:
-        - skyline-console

@@ -119,11 +119,6 @@ sources:
   branch: stable/zed
   owner: openstack
   repository:
-    awx-without-k8s:
-      branch: master
-      kolla:
-        - example-with-owner-and-branch
-      owner: fitbeard
     cinder:
       kolla:
         - cinder-base
