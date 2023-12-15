@@ -74,7 +74,7 @@ jobs:
           kolla-build --config-file releases/${{ github.event.inputs.os }}/kolla-build.conf --template-override releases/${{ github.event.inputs.os }}/template-overrides.j2 --profile ${{ github.event.inputs.profile }} --push
 
       - name: Upload templates
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }}
