@@ -9,7 +9,7 @@ kolla-build:
     namespace: fitbeard/kolla
     pull: true
     registry: quay.io
-    tag: zed-dev
+    tag: zed
   cinder-base:
     location: https://github.com/openstack/cinder.git
     reference: 011e6549259c0433ceb594d8083f6c838d964311

@@ -9,7 +9,7 @@ kolla-build:
     namespace: fitbeard/kolla
     pull: true
     registry: quay.io
-    tag: yoga-dev
+    tag: yoga
   cinder-base:
     location: https://github.com/openstack/cinder.git
     reference: f6d69ab251f212c8b6a0f2f26cda619ffa67b71a

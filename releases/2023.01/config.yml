@@ -10,7 +10,7 @@ kolla-build:
     namespace: fitbeard/kolla
     pull: true
     registry: quay.io
-    tag: antelope-dev
+    tag: '2023.01'
   cinder-base:
     location: https://github.com/openstack/cinder.git
     reference: e215be5fc6bcd4cdbc32883d4215a289986e4b01
