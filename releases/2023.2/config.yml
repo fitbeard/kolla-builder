@@ -1,0 +1,155 @@
+---
+kolla-build:
+  DEFAULT:
+    base: rocky
+    base_image: quay.io/rockylinux/rockylinux
+    base_tag: 9
+    cache: true
+    engine: docker
+    maintainer: Tadas Sutkaitis <tadasas@gmail.com>
+    namespace: fitbeard/kolla
+    pull: true
+    registry: quay.io
+    tag: '2023.2'
+  cinder-base:
+    location: https://github.com/openstack/cinder.git
+    reference: e215be5fc6bcd4cdbc32883d4215a289986e4b01
+    type: git
+  glance-base:
+    location: https://github.com/openstack/glance.git
+    reference: 285021bdb0ea344f995508fabb8b4e2485f2cf3c
+    type: git
+  heat-base:
+    location: https://github.com/openstack/heat.git
+    reference: 91709d22020c8cdba8fab19a00854e65bde90887
+    type: git
+  horizon:
+    location: https://github.com/openstack/horizon.git
+    reference: 5ca2d4082900dc51ae85226d903cb0a397f3e225
+    type: git
+  horizon-plugin-blazar-dashboard:
+    enabled: false
+  horizon-plugin-cloudkitty-dashboard:
+    enabled: false
+  horizon-plugin-designate-dashboard:
+    enabled: false
+  horizon-plugin-freezer-web-ui:
+    enabled: false
+  horizon-plugin-heat-dashboard:
+    enabled: false
+  horizon-plugin-ironic-ui:
+    enabled: false
+  horizon-plugin-magnum-ui:
+    enabled: false
+  horizon-plugin-manila-ui:
+    enabled: false
+  horizon-plugin-masakari-dashboard:
+    enabled: false
+  horizon-plugin-mistral-dashboard:
+    enabled: false
+  horizon-plugin-murano-dashboard:
+    enabled: false
+  horizon-plugin-neutron-vpnaas-dashboard:
+    enabled: false
+  horizon-plugin-octavia-dashboard:
+    enabled: false
+  horizon-plugin-sahara-dashboard:
+    enabled: false
+  horizon-plugin-senlin-dashboard:
+    enabled: false
+  horizon-plugin-solum-dashboard:
+    enabled: false
+  horizon-plugin-tacker-dashboard:
+    enabled: false
+  horizon-plugin-trove-dashboard:
+    enabled: false
+  horizon-plugin-venus-dashboard:
+    enabled: false
+  horizon-plugin-vitrage-dashboard:
+    enabled: false
+  horizon-plugin-watcher-dashboard:
+    enabled: false
+  horizon-plugin-zun-ui:
+    enabled: false
+  keystone-base:
+    location: https://github.com/openstack/keystone.git
+    reference: 3bcd957d223c6cd7ecacb434725a4d7139acaadd
+    type: git
+  neutron-base:
+    location: https://github.com/openstack/neutron.git
+    reference: c4b322597bcd9a1ba8aab77fd0f2ce000d39c57e
+    type: git
+  neutron-base-plugin-networking-baremetal:
+    enabled: false
+  neutron-base-plugin-networking-generic-switch:
+    enabled: false
+  neutron-base-plugin-networking-sfc:
+    enabled: false
+  neutron-base-plugin-vpnaas-agent:
+    enabled: false
+  nova-base:
+    location: https://github.com/openstack/nova.git
+    reference: 4940f81d9e01b6ba76aabfccda6cceb1960f391b
+    type: git
+  nova-base-plugin-blazar:
+    enabled: false
+  openstack-base:
+    location: https://github.com/openstack/requirements.git
+    reference: 2710414b4663b85b48ecbbba21f4f0ea42dc3df1
+    type: git
+  placement-base:
+    location: https://github.com/openstack/placement.git
+    reference: b3652feea1855c9481c9441976379d9851c0c62f
+    type: git
+  profiles:
+    cinder: cinder
+    heat: heat
+    horizon: horizon
+    main: >-
+      cron,cinder,kolla-toolbox,fluentd,glance,haproxy,heat,
+      horizon,keepalived,keystone,mariadb,memcached,neutron,
+      nova-,placement,openvswitch,ovn,rabbitmq,rsyslog
+    mariadb: mariadb
+    mcrouter: mcrouter
+    neutron: neutron
+    nova: nova-
+    toolbox: kolla-toolbox
+  skyline-apiserver:
+    location: https://github.com/openstack/skyline-apiserver.git
+    reference: 326a503d6cece6701922a5a3ed1a980efa12e2f5
+    type: git
+  skyline-console:
+    location: https://github.com/openstack/skyline-console.git
+    reference: d4cae6dd6a96d74b754c590fd2dd48fab83a345f
+    type: git
+sources:
+  branch: stable/2023.2
+  owner: openstack
+  repository:
+    cinder:
+      kolla:
+        - cinder-base
+    glance:
+      kolla:
+        - glance-base
+    heat:
+      kolla:
+        - heat-base
+    horizon:
+      kolla:
+        - horizon
+    keystone:
+      kolla:
+        - keystone-base
+    neutron:
+      kolla:
+        - neutron-base
+    nova:
+      kolla:
+        - nova-base
+    placement:
+      kolla:
+        - placement-base
+    requirements:
+      kolla:
+        - openstack-base

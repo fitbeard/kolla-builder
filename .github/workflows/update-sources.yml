@@ -18,7 +18,8 @@ jobs:
         release:
           - yoga
           - zed
-          - '2023.01'
+          - '2023.1'
+          - '2023.2'
     steps:
       - name: Checkout project
         uses: actions/checkout@v4
