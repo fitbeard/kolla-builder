@@ -6,12 +6,12 @@ on:
       os:
         description: 'Openstack release'
         required: true
-        default: 'antelope'
+        default: '2023.01'
         type: choice
         options:
           - yoga
           - zed
-          - antelope
+          - '2023.01'
       profile:
         description: 'Kolla profile'
         required: true
@@ -33,7 +33,7 @@ on:
 env:
   yoga: "quay.io/fitbeard/kolla/rocky-source-"
   zed: "quay.io/fitbeard/kolla/"
-  antelope: "quay.io/fitbeard/kolla/"
+  '2023.01': "quay.io/fitbeard/kolla/"
 
 jobs:
   promote-tag:
