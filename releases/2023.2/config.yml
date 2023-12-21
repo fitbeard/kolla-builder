@@ -13,19 +13,19 @@ kolla-build:
     tag: '2023.2'
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: e215be5fc6bcd4cdbc32883d4215a289986e4b01
+    reference: 775827bdaec6f7267cc5d8afdecce0c45846fbd8
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
-    reference: 285021bdb0ea344f995508fabb8b4e2485f2cf3c
+    reference: 9a4a3067b5c7c7f8ee9363bd939a3d86b260d660
     type: git
   heat-base:
     location: https://github.com/openstack/heat.git
-    reference: 91709d22020c8cdba8fab19a00854e65bde90887
+    reference: d1363cc17646893054f9e8daf40de67699078e7c
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: 5ca2d4082900dc51ae85226d903cb0a397f3e225
+    reference: 3c6029cd94846235e25058b71522c13556f41f58
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
@@ -73,11 +73,11 @@ kolla-build:
     enabled: false
   keystone-base:
     location: https://github.com/openstack/keystone.git
-    reference: 3bcd957d223c6cd7ecacb434725a4d7139acaadd
+    reference: 653d82b1b4e09b2ff37b56868e57d08c8e3af7dd
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: c4b322597bcd9a1ba8aab77fd0f2ce000d39c57e
+    reference: 76a58448e50a7159cf5722145904ae8b2ed3b722
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
@@ -89,17 +89,17 @@ kolla-build:
     enabled: false
   nova-base:
     location: https://github.com/openstack/nova.git
-    reference: 4940f81d9e01b6ba76aabfccda6cceb1960f391b
+    reference: 12c5de8f898ac5ac02cbf2f2384c6d906f87a4b0
     type: git
   nova-base-plugin-blazar:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: 2710414b4663b85b48ecbbba21f4f0ea42dc3df1
+    reference: a5fa5f12dd3abd03c9dffe248ba0b4221872d31e
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
-    reference: b3652feea1855c9481c9441976379d9851c0c62f
+    reference: a361622d749d3b24aad638ec1b03a7d7124a87b3
     type: git
   profiles:
     cinder: cinder
