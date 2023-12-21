@@ -80,4 +80,4 @@ jobs:
       - name: Promote new tag
         run: |
           kolla-build --version
-          PROFILE=${{ github.event.inputs.profile }} bash promote-tag.sh -c releases/${{ github.event.inputs.os }}/kolla-build.conf -r ${{ env[github.event.inputs.os] }} -ti ${{ github.event.inputs.os }}-dev -to ${{ github.event.inputs.os }}-$(date -u +"%Y.%m%d.%H%M%S")
+          PROFILE=${{ github.event.inputs.profile }} bash promote-tag.sh -c releases/${{ github.event.inputs.os }}/kolla-build.conf -r ${{ env[github.event.inputs.os] }} -ti ${{ github.event.inputs.os }} -to ${{ github.event.inputs.os }}-$(date -u +"%Y.%m%d.%H%M%S")
