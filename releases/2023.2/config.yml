@@ -13,7 +13,7 @@ kolla-build:
     tag: '2023.2'
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 775827bdaec6f7267cc5d8afdecce0c45846fbd8
+    reference: 7d158234b72f04e780e307b0375cedf30dd8fb90
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
@@ -77,7 +77,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: 3f3125fcfe974ad6eaceca7e7b30a45246e8f917
+    reference: e9cf2fd6cca8a3d5c06bcb073cb310cd61208b41
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
