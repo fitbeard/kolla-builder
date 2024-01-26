@@ -23,7 +23,7 @@ jobs:
           done
 
       - name: Get changed releases
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v3
         id: changes
         with:
           filters: .filters.yml
