@@ -9,7 +9,6 @@ on:
         default: '2023.1'
         type: choice
         options:
-          - yoga
           - zed
           - '2023.1'
           - '2023.2'
@@ -32,7 +31,7 @@ on:
         default: 'no'
 
 env:
-  yoga: "quay.io/fitbeard/kolla/rocky-source-"
+#  yoga: "quay.io/fitbeard/kolla/rocky-source-"
   zed: "quay.io/fitbeard/kolla/"
   '2023.1': "quay.io/fitbeard/kolla/"
   '2023.2': "quay.io/fitbeard/kolla/"
