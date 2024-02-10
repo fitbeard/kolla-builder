@@ -28,7 +28,7 @@ kolla-build:
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: 545b198954960e260f37210dc4717fca3549616d
+    reference: 9900cb29ae7eac216a8267c6fe7a51291fc7af7b
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
@@ -96,7 +96,7 @@ kolla-build:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: 4e030edd0f4a687eef4dc3d6aa16967b300bc5e8
+    reference: 3b0fff63856c2efab73172f9f47ff2509e60d9c2
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
