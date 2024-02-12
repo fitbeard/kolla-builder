@@ -13,7 +13,7 @@ kolla-build:
     tag: '2023.2'
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 8d453fa7b6daf1c1b6105a71f7c660b9036541f3
+    reference: 8df3c5cf43fb00efcf349a00ecde4df995fa1b93
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
