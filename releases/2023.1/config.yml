@@ -13,7 +13,7 @@ kolla-build:
     tag: '2023.1'
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 8d7e292bcd9ae610ac6341de2d00b8990252c24c
+    reference: 6e15ec3895ab4ebbf01c26182a66dd61bc293028
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
@@ -25,7 +25,7 @@ kolla-build:
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: e621c9d745a5a84201d1a625cd252356385059b4
+    reference: 7244c3142ca219a586ada686016b1eb956f9e7c5
     type: git
   horizon-additions-custom-theme:
     location: https://github.com/fitbeard/openstack-horizon-custom-theme.git
@@ -97,7 +97,7 @@ kolla-build:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: b065698b42454e2d5e91205ac3ea4e44bc84d6c2
+    reference: f392b3a8cfb5f350349907d94c18a3da70fe5204
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
