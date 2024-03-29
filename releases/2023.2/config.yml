@@ -25,7 +25,7 @@ kolla-build:
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: 4de36bb649c514f50d2a958c9277097a08b23cec
+    reference: e9bf695641f4c07fadacf12599ae406c5ecd3ca6
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
@@ -77,7 +77,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: cc818385a192420ee1e10d26b9c779e962f323fc
+    reference: 377e1f6838fcfd5c20056cafaabc7f69992ad2fa
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
@@ -89,13 +89,13 @@ kolla-build:
     enabled: false
   nova-base:
     location: https://github.com/openstack/nova.git
-    reference: 3dde97216cfc8f30aaa9f3e2f5a67b1e252c85a0
+    reference: c5a73e6c7227f199bfa0b66c6ef0c2730d70c3b2
     type: git
   nova-base-plugin-blazar:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: 18ef0785c4d95c0b7a144c2f9b3ca6a97df20e52
+    reference: b6e023bd4b25995c98e2d2294dbcd1f008ef09a5
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
