@@ -28,7 +28,7 @@ kolla-build:
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: 8e624332831ec0a2638f917327abf971a407cf64
+    reference: 5de40f9b222608d35c5a0919117259e966217a86
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
@@ -78,7 +78,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: cf21a4d9791281605ab3cebbbf3de3cb8631b5bc
+    reference: 38ac22354d62820d5156113c907a91b55b2ab2c3
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
