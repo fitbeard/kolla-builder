@@ -78,7 +78,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: 38ac22354d62820d5156113c907a91b55b2ab2c3
+    reference: ca25eb96f16dbe5ff1ca4446534f9a1d12fa7035
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
