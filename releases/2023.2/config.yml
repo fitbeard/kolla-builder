@@ -21,7 +21,7 @@ kolla-build:
     type: git
   heat-base:
     location: https://github.com/openstack/heat.git
-    reference: d1363cc17646893054f9e8daf40de67699078e7c
+    reference: 4ca77ff93a6e5e058c52585197fbc7008718be70
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
@@ -73,7 +73,7 @@ kolla-build:
     enabled: false
   keystone-base:
     location: https://github.com/openstack/keystone.git
-    reference: 50358720261c308500605cbc676708542ee9fdfa
+    reference: ab9cf925e8031ec29393fdd07646202e87c022a0
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
@@ -95,7 +95,7 @@ kolla-build:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: b6e023bd4b25995c98e2d2294dbcd1f008ef09a5
+    reference: 8a1f278a535c2bf665521fa93f40177ded111750
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
