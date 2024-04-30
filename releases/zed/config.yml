@@ -126,6 +126,7 @@ sources:
       kolla:
         - glance-base
     heat:
+      branch: unmaintained/zed
       kolla:
         - heat-base
     horizon:
