@@ -13,7 +13,7 @@ kolla-build:
     tag: '2023.2'
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 539d8725258932e8a655370fa3ffc7f2eefa85b9
+    reference: b729546960a5a383e1a62fa0f572d71fe01ad22a
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
@@ -21,11 +21,11 @@ kolla-build:
     type: git
   heat-base:
     location: https://github.com/openstack/heat.git
-    reference: 4ca77ff93a6e5e058c52585197fbc7008718be70
+    reference: 933f921893698a63ee6d35b17c3bd99d72cc971c
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: e9bf695641f4c07fadacf12599ae406c5ecd3ca6
+    reference: 593ef9b56191676d0a85b55bd152c0c757fad2de
     type: git
   horizon-plugin-blazar-dashboard:
     enabled: false
