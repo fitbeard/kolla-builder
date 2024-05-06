@@ -120,6 +120,7 @@ sources:
   owner: openstack
   repository:
     cinder:
+      branch: unmaintained/zed
       kolla:
         - cinder-base
     glance:
