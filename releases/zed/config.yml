@@ -131,15 +131,18 @@ sources:
       kolla:
         - heat-base
     horizon:
+      branch: unmaintained/zed
       kolla:
         - horizon
     keystone:
       kolla:
         - keystone-base
     neutron:
+      branch: unmaintained/zed
       kolla:
         - neutron-base
     nova:
+      branch: unmaintained/zed
       kolla:
         - nova-base
     placement:
