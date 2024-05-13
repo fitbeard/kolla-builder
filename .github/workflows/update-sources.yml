@@ -16,7 +16,6 @@ jobs:
     strategy:
       matrix:
         release:
-          - zed
           - '2023.1'
           - '2023.2'
     steps:

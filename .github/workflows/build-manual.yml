@@ -9,7 +9,6 @@ on:
         default: '2023.1'
         type: choice
         options:
-          - zed
           - '2023.1'
           - '2023.2'
       profile:
