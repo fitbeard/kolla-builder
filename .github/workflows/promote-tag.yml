@@ -61,7 +61,7 @@ jobs:
           password: ${{ secrets.QUAY_ROBOT_TOKEN }}
 
       - name: Setup Crane
-        uses: imjasonh/setup-crane@v0.3
+        uses: imjasonh/setup-crane@v0.4
         with:
           version: v0.15.1
 
