@@ -12,6 +12,14 @@ on:
           - '2023.1'
           - '2023.2'
           - '2024.1'
+      platform:
+        description: 'Platform'
+        required: true
+        default: 'amd64'
+        type: choice
+        options:
+          - 'amd64'
+          - 'arm64'
       profile:
         description: 'Kolla profile'
         required: true
@@ -31,9 +39,10 @@ on:
         default: 'no'
 
 jobs:
-  build:
+  build-amd64:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    if: ${{ github.event.inputs.platform == 'amd64' }}
     steps:
       - name: Checkout project
         uses: actions/checkout@v4
@@ -72,6 +81,57 @@ jobs:
           kolla-build --version
           kolla-build --config-file releases/${{ github.event.inputs.os }}/kolla-build.conf --template-override releases/${{ github.event.inputs.os }}/template-overrides.j2 --profile ${{ github.event.inputs.profile }} --nopush --template-only --work-dir templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }}
           kolla-build --config-file releases/${{ github.event.inputs.os }}/kolla-build.conf --template-override releases/${{ github.event.inputs.os }}/template-overrides.j2 --profile ${{ github.event.inputs.profile }} --push
+
+      - name: Upload templates
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }}
+          path: templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }}/
+          retention-days: 30
+
+  build-arm64:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    if: ${{ github.event.inputs.platform == 'arm64' }}
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Verify inputs
+        id: verify
+        run: |
+          set -e
+          if [[ ${{ github.event.inputs.confirm }} != "yes" ]]; then
+            >&2 echo "Confirm must be 'yes'"
+            exit 1
+          fi
+          exit 0
+
+      - name: Authenticate with Quay.io
+        uses: docker/login-action@v3.2.0
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_USERNAME }}
+          password: ${{ secrets.QUAY_ROBOT_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r releases/${{ github.event.inputs.os }}/requirements.txt
+
+      - name: Generate kolla config
+        run: |
+          python kolla-builder.py generate-config -i releases/${{ github.event.inputs.os }}/config.yml -o releases/${{ github.event.inputs.os }}/kolla-build.conf
+
+      - name: Build and push kolla images
+        run: |
+          kolla-build --version
+          kolla-build --config-file releases/${{ github.event.inputs.os }}/kolla-build.conf --template-override releases/${{ github.event.inputs.os }}/template-overrides.j2 --profile ${{ github.event.inputs.profile }} --platform linux/arm64 --base-arch aarch64 --nopush --template-only --work-dir templates-${{ github.event.inputs.os }}-${{ github.event.inputs.profile }}
+          kolla-build --config-file releases/${{ github.event.inputs.os }}/kolla-build.conf --template-override releases/${{ github.event.inputs.os }}/template-overrides.j2 --profile ${{ github.event.inputs.profile }} --platform linux/arm64 --base-arch aarch64 --tag ${{ github.event.inputs.os }}-arm --push
 
       - name: Upload templates
         uses: actions/upload-artifact@v4
