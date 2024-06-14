@@ -11,6 +11,7 @@ on:
         options:
           - '2023.1'
           - '2023.2'
+          - '2024.1'
       profile:
         description: 'Kolla profile'
         required: true

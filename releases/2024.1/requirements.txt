@@ -1,0 +1,3 @@
+requests<2.32
+docker==7.1.0
+kolla==18.0.0
