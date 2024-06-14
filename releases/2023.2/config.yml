@@ -17,7 +17,7 @@ kolla-build:
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
-    reference: cec35e92bb36f2bfcdaf2cc1f05d7b5a0f3a07cc
+    reference: 5e2acc91a4fcc834e3faea3ddb2d0ea13e2af606
     type: git
   heat-base:
     location: https://github.com/openstack/heat.git
@@ -77,7 +77,7 @@ kolla-build:
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: 72b64013e2407eb8bd1ee4ee3ac0774000087388
+    reference: 81c8fd369b5ba58e53b4af21afbb95e2897dc42e
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
