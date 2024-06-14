@@ -1,2 +1,2 @@
-requests<2.32
+requests>=2.32.3
 kolla==16.4.0
