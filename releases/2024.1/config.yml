@@ -85,10 +85,11 @@ kolla-build:
     type: git
   nova-base-plugin-blazar:
     enabled: false
-  openstack-base:
-    location: https://github.com/openstack/requirements.git
-    reference: d9e1ea888b9975dc0cfb7ebd1d5cf0ad65331b34
-    type: git
+  # until: https://review.opendev.org/c/openstack/kolla/+/922077
+  # openstack-base:
+  #   location: https://github.com/openstack/requirements.git
+  #   reference: d9e1ea888b9975dc0cfb7ebd1d5cf0ad65331b34
+  #   type: git
   placement-base:
     location: https://github.com/openstack/placement.git
     reference: af00c864e98ae76cae3e621ad95868234d027882
@@ -142,6 +143,7 @@ sources:
     placement:
       kolla:
         - placement-base
-    requirements:
-      kolla:
-        - openstack-base
+    # until: https://review.opendev.org/c/openstack/kolla/+/922077
+    # requirements:
+    #   kolla:
+    #     - openstack-base

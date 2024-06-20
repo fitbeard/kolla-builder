@@ -5,3 +5,7 @@
 LABEL maintainer="{{ maintainer }}" name="{{ image_name }}" build-date="{{ build_date }}"
 LABEL org.opencontainers.image.source="https://github.com/fitbeard/kolla-builder"
 {% endblock %}
+
+# Keystone
+# Until: https://review.opendev.org/c/openstack/kolla/+/922077
+{% set keystone_packages_append = ['krb5-devel'] %}
