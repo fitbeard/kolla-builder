@@ -13,15 +13,15 @@ kolla-build:
     tag: '2023.2'
   cinder-base:
     location: https://github.com/openstack/cinder.git
-    reference: 9e667b02b2c20b4ada18c1a472be152956284d45
+    reference: 79197560b6d68d80a504e74ee66caa44e2808158
     type: git
   glance-base:
     location: https://github.com/openstack/glance.git
-    reference: 8540ffc6ee34976285209e9f3c7c728bf649e0ff
+    reference: 5b4be5b6f2f67ec8e61bceff8c2ed79b870aace0
     type: git
   heat-base:
     location: https://github.com/openstack/heat.git
-    reference: 39eca5de2e193f652792e4f7be2e5eb96dd3d853
+    reference: 4fd9953a55c15e1d6d0bfb8f648d03d9e368fc3b
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
@@ -73,11 +73,11 @@ kolla-build:
     enabled: false
   keystone-base:
     location: https://github.com/openstack/keystone.git
-    reference: fee954e9b48fa7a57bdf3ef98e50f743fda969f5
+    reference: 1829ce0202cbe11602fafd053cd1cd3eb0f996b0
     type: git
   neutron-base:
     location: https://github.com/openstack/neutron.git
-    reference: 40e7e1ec921c4146f007d8d810b08128fb28fcd2
+    reference: c06cc4462b4b5c9270f94db951533db8da9079da
     type: git
   neutron-base-plugin-networking-baremetal:
     enabled: false
@@ -89,13 +89,13 @@ kolla-build:
     enabled: false
   nova-base:
     location: https://github.com/openstack/nova.git
-    reference: 2856e943442d2706331ac175f29199d5f220a935
+    reference: be987f5481bdd1f616f32a919bb7a64a643109f0
     type: git
   nova-base-plugin-blazar:
     enabled: false
   openstack-base:
     location: https://github.com/openstack/requirements.git
-    reference: 54471ef8753b4f9f270f1b5a45f7e82597d62ff5
+    reference: f18d00dc711735bdd98d985513e4a3edec44dd04
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
