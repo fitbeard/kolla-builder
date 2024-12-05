@@ -25,7 +25,7 @@ kolla-build:
     type: git
   horizon:
     location: https://github.com/openstack/horizon.git
-    reference: 7ba908e3dd3f716ca4ee6933502016ff37b39fde
+    reference: 734db215e73bbf540718c1f255d3e1064ce347f1
     type: git
   horizon-additions-custom-theme:
     location: https://github.com/fitbeard/openstack-horizon-custom-theme.git
