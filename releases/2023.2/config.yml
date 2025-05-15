@@ -99,7 +99,7 @@ kolla-build:
     type: git
   placement-base:
     location: https://github.com/openstack/placement.git
-    reference: a361622d749d3b24aad638ec1b03a7d7124a87b3
+    reference: d84f211fd2ff84a2521d418f88412abac3f3d30f
     type: git
   profiles:
     cinder: cinder
