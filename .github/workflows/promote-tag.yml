@@ -68,7 +68,7 @@ jobs:
           version: v0.15.1
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
 
       - name: Install dependencies
         run: |
